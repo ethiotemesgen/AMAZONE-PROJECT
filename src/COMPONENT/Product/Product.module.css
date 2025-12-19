@@ -1,0 +1,79 @@
+.productWrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1500px;
+  margin: 40px auto;
+  padding: 0 10px;
+}
+
+.productCard {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative; /* Needed for absolute positioning */
+}
+
+.productCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.productImage {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.productTitle {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.rating {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 5px;
+}
+
+.productPrice {
+  font-weight: 700;
+  margin: 5px 0;
+}
+
+/* Hide Add to Cart by default */
+.addToCart {
+  font-weight: 600;
+  margin-top: 5px;
+  opacity: 0;           /* hidden */
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;  /* prevent clicking when hidden */
+}
+
+/* Show Add to Cart on hover */
+.productCard:hover .addToCart {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;  /* allow clicking */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .productWrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .productWrapper {
+    grid-template-columns: 1fr;
+  }
+}

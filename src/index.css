@@ -1,0 +1,11 @@
+/* src/index.css */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* optional: make all elements use same box-sizing */
+*, *::before, *::after {
+  box-sizing: inherit;
+}

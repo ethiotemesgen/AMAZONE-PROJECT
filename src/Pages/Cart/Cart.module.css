@@ -1,0 +1,131 @@
+/* ================= CART LAYOUT ================= */
+
+.cartSection {
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  align-items: flex-start;
+}
+
+/* -------- LEFT: CART ITEMS (1/3) -------- */
+.cartLeft {
+  width: 33.3333%;
+  max-width: 33.3333%;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* -------- MIDDLE: EMPTY SPACE (1/3) -------- */
+.cartSpacer {
+  width: 33.3333%;
+  max-width: 33.3333%;
+}
+
+/* -------- RIGHT: CART SUMMARY (FIXED RIGHT) -------- */
+.cartRight {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 33.3333%;
+  max-width: 33.3333%;
+  height: 100vh;
+  box-sizing: border-box;
+
+  padding: 20px;
+  background-color: #f0f4f8;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ================= CART ITEM CARDS ================= */
+
+.productCard {
+  display: flex;
+  gap: 12px;
+  padding: 10px;
+
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.productCard img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.productCardContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* ================= SUMMARY ================= */
+
+.summaryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.lastUpdated {
+  font-size: 12px;
+  color: #555;
+}
+
+.cartItemRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.cartItemRow:last-child {
+  border-bottom: none;
+}
+
+.subtotal {
+  margin-top: 15px;
+  font-weight: bold;
+  text-align: right;
+}
+
+.checkoutButton {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px;
+
+  background-color: #f0c14b;
+  border: 1px solid #a88734;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+  .cartSection {
+    flex-direction: column;
+  }
+
+  .cartLeft,
+  .cartSpacer,
+  .cartRight {
+    width: 100%;
+    max-width: 100%;
+    position: static;
+    height: auto;
+  }
+
+  .cartSpacer {
+    display: none;
+  }
+}
