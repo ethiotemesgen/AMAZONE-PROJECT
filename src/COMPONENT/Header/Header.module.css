@@ -143,6 +143,7 @@
   color: white;
   cursor: pointer;
   text-decoration: none;
+  position: relative; /* needed for dropdown */
 }
 
 .headerAccount p,
@@ -180,6 +181,40 @@
   font-weight: bold;
 }
 
+/* DROPDOWN MENUS */
+.dropdownMenu {
+  position: absolute;
+  top: 100%; /* below the parent */
+  left: 0;
+  background: white;
+  color: black;
+  padding: 10px;
+  display: flex;
+  flex-direction: column; /* vertical items */
+  gap: 5px;
+  border-radius: 4px;
+  min-width: 160px;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.dropdownMenu a,
+.dropdownMenu button {
+  text-decoration: none;
+  color: black;
+  padding: 8px 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.dropdownMenu a:hover,
+.dropdownMenu button:hover {
+  background-color: #f0f0f0;
+  border-radius: 4px;
+}
+
 /* Hover effects */
 .headerAccount:hover span,
 .headerOrders:hover span,
@@ -199,7 +234,6 @@
   .headerContainer {
     flex-wrap: wrap;
   }
-  
 
   .headerRight {
     gap: 10px;

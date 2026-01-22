@@ -1,27 +1,41 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./Header.module.css";
-import { FiMapPin, FiSearch, FiShoppingCart } from "react-icons/fi";
+import { FiMapPin, FiSearch, FiShoppingCart, FiUser } from "react-icons/fi";
 import { DataContext } from "../DataProvider/DataProvider";
+import { auth } from "../../Utility/Firebase";
 
 export default function Header() {
-  const [state] = useContext(DataContext); // useContext correctly
-  const { basket } = state;
+  const [state, dispatch] = useContext(DataContext);
+  const { basket, user } = state;
+  const navigate = useNavigate();
+  const [accountDropdown, setAccountDropdown] = useState(false);
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((currentUser) => {
+      dispatch({ type: "SET_USER", payload: currentUser });
+    });
+    return () => unsubscribe();
+  }, [dispatch]);
+
+  const handleSignOut = async () => {
+    await auth.signOut();
+    dispatch({ type: "SET_USER", payload: null });
+    setAccountDropdown(false);
+    navigate("/");
+  };
 
   return (
     <header className={styles.header}>
       <div className={styles.headerContainer}>
-        {/* Left: Logo + Delivery */}
+        {/* Logo & Delivery */}
         <div className={styles.headerLeft}>
-          {/* Logo */}
           <Link to="/" className={styles.headerLogo}>
             <img
               src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
               alt="Amazon Logo"
             />
           </Link>
-
-          {/* Delivery */}
           <div className={styles.headerDelivery}>
             <span className={styles.locationIcon}>
               <FiMapPin size={20} color="white" />
@@ -33,7 +47,7 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Center: Search */}
+        {/* Search */}
         <div className={styles.headerSearch}>
           <select>
             <option value="all">All</option>
@@ -44,25 +58,30 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Right side */}
+        {/* Right */}
         <div className={styles.headerRight}>
-          {/* Language */}
-          <div className={styles.headerLanguage}>
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/7/71/Flag_of_Ethiopia.svg"
-              alt="Ethiopia flag"
-            />
-            <select>
-              <option>EN</option>
-            </select>
-          </div>
-
           {/* Account */}
-          <div className={styles.headerAccount}>
-            <Link to="/signin">
-              <p>Sign In</p>
+          <div
+            className={styles.headerAccount}
+            onMouseEnter={() => setAccountDropdown(true)}
+            onMouseLeave={() => setAccountDropdown(false)}
+          >
+            <Link
+              to={!user ? "/auth" : "#"}
+              style={{ display: "flex", alignItems: "center", gap: "5px" }}
+            >
+              {user && <FiUser size={20} color="white" />}
+              <p>Hello, {user ? user.displayName || user.email : "Sign In"}</p>
             </Link>
             <span>Account & Lists</span>
+
+            {accountDropdown && user && (
+              <div className={styles.dropdownMenu}>
+                <Link to="/profile">Profile</Link>
+                <Link to="/orders">Orders</Link>
+                <button onClick={handleSignOut}>Sign Out</button>
+              </div>
+            )}
           </div>
 
           {/* Orders */}
@@ -74,7 +93,9 @@ export default function Header() {
           {/* Cart */}
           <Link to="/cart" className={styles.headerCart}>
             <FiShoppingCart size={25} color="white" />
-            <span className={styles.cartCount}>{basket.length}</span>
+            <span className={styles.cartCount}>
+              {Array.isArray(basket) ? basket.length : 0}
+            </span>
           </Link>
         </div>
       </div>

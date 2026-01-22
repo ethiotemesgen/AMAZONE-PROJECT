@@ -1,0 +1,115 @@
+/* Container for the whole auth page */
+.auth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  min-height: 100vh;
+  padding-top: 30px;
+}
+
+/* Amazon Logo */
+.logo {
+  width: 120px;
+  margin-bottom: 20px;
+  object-fit: contain;
+}
+
+/* Auth box */
+.authBox {
+  width: 360px;
+  padding: 30px 40px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.1);
+}
+
+.authBox h1 {
+  font-weight: 400;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.authBox form {
+  display: flex;
+  flex-direction: column;
+}
+
+.authBox label {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.authBox input {
+  height: 32px;
+  margin-bottom: 15px;
+  padding: 5px 8px;
+  border: 1px solid #a6a6a6;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+.primaryBtn {
+  background: linear-gradient(#f7dfa5, #f0c14b);
+  border: 1px solid #a88734;
+  height: 36px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.primaryBtn:hover {
+  background: linear-gradient(#f5d78e, #eeb933);
+}
+
+.infoText {
+  font-size: 12px;
+  color: #111;
+  margin-top: 15px;
+  line-height: 1.4;
+}
+
+/* Divider */
+.divider {
+  width: 360px;
+  text-align: center;
+  margin: 25px 0 15px 0;
+  position: relative;
+}
+
+.divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #e7e7e7;
+}
+
+.divider span {
+  background-color: #fff;
+  padding: 0 10px;
+  font-size: 12px;
+  color: #767676;
+  position: relative;
+}
+
+/* Secondary button for Sign-Up */
+.secondaryBtn {
+  width: 360px;
+  height: 36px;
+  background: linear-gradient(#f7f8fa, #e7e9ec);
+  border: 1px solid #adb1b8;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.secondaryBtn:hover {
+  background: linear-gradient(#e7eaf0, #d9dce1);
+}

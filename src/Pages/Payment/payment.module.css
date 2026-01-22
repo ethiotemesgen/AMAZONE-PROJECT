@@ -1,0 +1,140 @@
+/* Payment.module.css */
+
+.paymentHeader {
+  padding: 20px 30px;
+  background-color: #f3f3f3;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.paymentHeader h1 {
+  font-size: 28px;
+  margin: 0;
+  color: #111;
+}
+
+.paymentSection {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.paymentBlock {
+  flex: 1;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.paymentBlock h3 {
+  margin-top: 0;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #eee;
+  font-size: 20px;
+  color: #111;
+}
+
+.reviewItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.reviewItem:last-child {
+  border-bottom: none;
+}
+
+.reviewItem p {
+  font-weight: 600;
+  color: #555;
+  margin: 8px 0 0;
+}
+
+.cardSection {
+  padding: 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fafafa;
+  margin: 20px 0;
+}
+
+.cardSection .StripeElement {
+  padding: 12px;
+  font-size: 16px;
+}
+
+.error {
+  color: #d93025;
+  font-size: 14px;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #ffebee;
+  border-radius: 4px;
+}
+
+.orderSummary {
+  margin-top: 24px;
+  text-align: right;
+}
+
+.orderSummary p {
+  font-size: 20px;
+  margin: 0 0 16px;
+}
+
+.payButton {
+  background-color: #f0c14b;
+  color: #111;
+  border: 1px solid #a88734;
+  border-radius: 4px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  width: 100%;
+  max-width: 300px;
+  transition: all 0.15s;
+}
+
+.payButton:hover:not(:disabled) {
+  background-color: #e0b03b;
+  border-color: #997030;
+}
+
+.payButton:disabled {
+  background-color: #e7e9ea;
+  border-color: #ccc;
+  color: #777;
+  cursor: not-allowed;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .paymentSection {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .paymentBlock {
+    padding: 16px;
+  }
+
+  .paymentHeader h1 {
+    font-size: 24px;
+  }
+
+  .orderSummary {
+    text-align: center;
+  }
+
+  .payButton {
+    max-width: none;
+  }
+}

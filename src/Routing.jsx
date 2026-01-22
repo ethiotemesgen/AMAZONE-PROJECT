@@ -6,6 +6,12 @@ import Orders from "./Pages/Orders/Orders.jsx";
 import Cart from "./Pages/Cart/Cart.jsx";
 import Results from "./Pages/Results/Results.jsx";
 import ProductDetails from "./Pages/ProductDetails/ProductDetails.jsx";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+
+const stripePromise = loadStripe(
+  "pk_test_51Sh08D9pgs26zdmNonryxOFv2AWLfki7uKAmaEKCvoxx8FS4SiSed5C4mmraNpIBq3iDOZuTYs6GSjL2ZSuqMZrP00SV1S4g7T"
+);
 
 const Routing = () => {
   return (

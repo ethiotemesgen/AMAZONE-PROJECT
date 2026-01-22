@@ -1,0 +1,83 @@
+.paymentHeader {
+  margin: 20px 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.paymentSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.paymentBlock {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.addressRow,
+.reviewRow {
+  margin-bottom: 15px;
+}
+
+.addressTitle,
+.reviewTitle {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.addressInfo p,
+.reviewItems p {
+  margin: 2px 0;
+}
+
+.reviewItems {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.reviewItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.qty {
+  font-weight: 500;
+}
+
+.cardSection {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.error {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.orderSummary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.payButton {
+  background-color: #25b09b;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.payButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

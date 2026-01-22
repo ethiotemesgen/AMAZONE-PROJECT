@@ -54,8 +54,8 @@
 }
 
 .productCard img {
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 500px;
   object-fit: contain;
 }
 

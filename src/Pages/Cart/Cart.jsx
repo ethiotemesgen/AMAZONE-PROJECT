@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Layout from "../../COMPONENT/Layout/Layout";
 import { DataContext } from "../../COMPONENT/DataProvider/DataProvider";
 import { Type } from "../../Utility/Action.type";
@@ -11,7 +12,6 @@ const Cart = () => {
 
   /* ---------- Quantity Handlers ---------- */
   const increaseQty = (id) => dispatch({ type: Type.INCREASE_QTY, id });
-
   const decreaseQty = (id) => dispatch({ type: Type.DECREASE_QTY, id });
 
   /* ---------- Totals ---------- */
@@ -46,9 +46,7 @@ const Cart = () => {
                 {/* Quantity Controls */}
                 <div className={styles.qtyControls}>
                   <button onClick={() => decreaseQty(item.id)}>−</button>
-
                   <span>{item.quantity}</span>
-
                   <button onClick={() => increaseQty(item.id)}>+</button>
                 </div>
               </div>
@@ -92,9 +90,12 @@ const Cart = () => {
             <label htmlFor="gift">This order contains a gift</label>
           </div>
 
-          <button className={styles.checkoutButton}>
-            Continue to checkout
-          </button>
+          {/* ✅ Checkout Button → Payment */}
+          <Link to="/payment" style={{ textDecoration: "none" }}>
+            <button className={styles.checkoutButton}>
+              Continue to checkout
+            </button>
+          </Link>
         </div>
       </section>
     </Layout>
