@@ -4,7 +4,7 @@ import Layout from "../../COMPONENT/Layout/Layout";
 import { DataContext } from "../../COMPONENT/DataProvider/DataProvider";
 import { Type } from "../../Utility/Action.type";
 import ProductCard from "../../COMPONENT/Product/ProductCard";
-import styles from "./Cart.module.css";
+import styles from "./Cart.module.css"; //cart module css
 
 const Cart = () => {
   const [{ basket }, dispatch] = useContext(DataContext);
