@@ -1,241 +1,112 @@
-/* Main header container */
-.header {
-  width: 100%;
-  background-color: #131921;
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-  position: sticky; 
-  top: 0;          
-  z-index: 1000; 
-}
+/* ================= RESPONSIVE (AMAZON-LIKE) ================= */
 
-.headerContainer {
-  max-width: 1500px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  padding: 10px 20px;
-  justify-content: space-between;
-}
-
-/* LEFT SIDE: Logo + Delivery */
-.headerLeft {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-/* Logo */
-.headerLogo img {
-  width: 110px;
-  object-fit: contain;
-  cursor: pointer;
-}
-
-.headerLogo:hover {
-  opacity: 0.9;
-}
-
-/* Delivery Section */
-.headerDelivery {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-
-.locationIcon {
-  margin-right: 5px;
-  display: flex;
-  align-items: center;
-}
-
-.deliveryText p {
-  margin: 0;
-  font-size: 12px;
-  color: #ccc;
-}
-
-.deliveryText span {
-  font-size: 14px;
-  font-weight: bold;
-  color: white;
-}
-
-/* CENTER: Search Bar */
-.headerSearch {
-  display: flex;
-  flex: 1;
-  margin: 0 20px;
-  height: 40px;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-.headerSearch select {
-  width: 60px;
-  border: none;
-  background: #e6e6e6;
-  padding: 0 10px;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-.headerSearch input {
-  flex: 1;
-  border: none;
-  padding: 0 15px;
-  font-size: 16px;
-}
-
-.headerSearch input:focus {
-  outline: none;
-}
-
-.searchBtn {
-  width: 50px;
-  background-color: #febd69;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.searchBtn:hover {
-  background-color: #f3a847;
-}
-
-/* RIGHT SIDE */
-.headerRight {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-/* Language */
-.headerLanguage {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.headerLanguage img {
-  width: 25px;
-  height: 18px;
-  object-fit: cover;
-}
-
-.headerLanguage select {
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.headerLanguage select option {
-  color: black;
-}
-
-/* Account & Orders */
-.headerAccount,
-.headerOrders {
-  color: white;
-  cursor: pointer;
-  text-decoration: none;
-  position: relative; /* needed for dropdown */
-}
-
-.headerAccount p,
-.headerOrders p {
-  margin: 0;
-  font-size: 12px;
-  color: #ccc;
-}
-
-.headerAccount span,
-.headerOrders span {
-  font-size: 14px;
-  font-weight: bold;
-  color: white;
-}
-
-/* Cart */
-.headerCart {
-  position: relative;
-  display: flex;
-  align-items: center;
-  color: white;
-  text-decoration: none;
-}
-
-.cartCount {
-  position: absolute;
-  top: -5px;
-  right: -10px;
-  background: #f08804;
-  color: black;
-  padding: 2px 6px;
-  font-size: 12px;
-  border-radius: 50%;
-  font-weight: bold;
-}
-
-/* DROPDOWN MENUS */
-.dropdownMenu {
-  position: absolute;
-  top: 100%; /* below the parent */
-  left: 0;
-  background: white;
-  color: black;
-  padding: 10px;
-  display: flex;
-  flex-direction: column; /* vertical items */
-  gap: 5px;
-  border-radius: 4px;
-  min-width: 160px;
-  z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
-
-.dropdownMenu a,
-.dropdownMenu button {
-  text-decoration: none;
-  color: black;
-  padding: 8px 10px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-}
-
-.dropdownMenu a:hover,
-.dropdownMenu button:hover {
-  background-color: #f0f0f0;
-  border-radius: 4px;
-}
-
-/* Hover effects */
-.headerAccount:hover span,
-.headerOrders:hover span,
-.headerDelivery:hover span,
-.headerCart:hover {
-  color: #febd69;
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .headerSearch {
-    display: none;
-  }
-}
-
-@media (max-width: 600px) {
+/* Tablets */
+@media (max-width: 1024px) {
   .headerContainer {
-    flex-wrap: wrap;
+    padding: 8px 15px;
+  }
+
+  .headerSearch {
+    margin: 0 10px;
   }
 
   .headerRight {
+    gap: 12px;
+  }
+
+  .headerLogo img {
+    width: 95px;
+  }
+}
+
+/* Small tablets & large phones */
+@media (max-width: 900px) {
+  .headerContainer {
+    flex-wrap: wrap;
     gap: 10px;
+  }
+
+  /* Top row: logo + right icons */
+  .headerLeft {
+    flex: 1;
+  }
+
+  .headerRight {
+    justify-content: flex-end;
+  }
+
+  /* Search moves to its own row (Amazon style) */
+  .headerSearch {
+    order: 3;
+    width: 100%;
+    margin: 5px 0 0 0;
+    height: 38px;
+  }
+
+  .headerSearch input {
+    font-size: 14px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 600px) {
+  .header {
+    position: sticky;
+    top: 0;
+  }
+
+  .headerContainer {
+    padding: 8px 10px;
+  }
+
+  /* Hide delivery text, keep icon */
+  .deliveryText {
+    display: none;
+  }
+
+  .headerLogo img {
+    width: 85px;
+  }
+
+  /* Compact right section */
+  .headerRight {
+    gap: 8px;
+  }
+
+  /* Hide language selector text */
+  .headerLanguage select {
+    display: none;
+  }
+
+  /* Stack account text like Amazon */
+  .headerAccount p,
+  .headerOrders p {
+    font-size: 10px;
+  }
+
+  .headerAccount span,
+  .headerOrders span {
+    font-size: 12px;
+  }
+
+  /* Cart badge adjustment */
+  .cartCount {
+    top: -6px;
+    right: -8px;
+    font-size: 11px;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 420px) {
+  .headerAccount span,
+  .headerOrders span {
+    display: none;
+  }
+
+  .headerAccount p,
+  .headerOrders p {
+    font-size: 11px;
+    color: white;
   }
 }
