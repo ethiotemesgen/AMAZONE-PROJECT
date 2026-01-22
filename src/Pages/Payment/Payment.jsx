@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import Layout from "../../COMPONENT/Layout/Layout";
 import { DataContext } from "../../COMPONENT/DataProvider/DataProvider";
 import ProductCard from "../../COMPONENT/Product/ProductCard";
-import styles from "./Payment.module.css";
+import styles from "./payment.module.css";
 
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import axios from "axios";
