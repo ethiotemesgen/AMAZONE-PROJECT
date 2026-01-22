@@ -28,7 +28,7 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.headerContainer}>
-        {/* Logo & Delivery */}
+        {/* LEFT: Logo & Delivery */}
         <div className={styles.headerLeft}>
           <Link to="/" className={styles.headerLogo}>
             <img
@@ -47,7 +47,7 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Search */}
+        {/* CENTER: Search */}
         <div className={styles.headerSearch}>
           <select>
             <option value="all">All</option>
@@ -58,8 +58,21 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Right */}
+        {/* RIGHT: Language, Account, Orders, Cart */}
         <div className={styles.headerRight}>
+          {/* Language with Ethiopian flag */}
+          {/* Language with Ethiopian flag */}
+          <div className={styles.headerLanguage}>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Flag_of_Ethiopia.svg/64px-Flag_of_Ethiopia.svg.png"
+              alt="Ethiopian Flag"
+            />
+            <select>
+              <option value="en">EN</option>
+              <option value="am">AM</option>
+            </select>
+          </div>
+
           {/* Account */}
           <div
             className={styles.headerAccount}
