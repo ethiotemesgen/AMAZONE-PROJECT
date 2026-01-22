@@ -4,7 +4,7 @@ import Layout from "../../COMPONENT/Layout/Layout";
 import { DataContext } from "../../COMPONENT/DataProvider/DataProvider";
 import { Type } from "../../Utility/Action.type";
 import ProductCard from "../../COMPONENT/Product/ProductCard";
-import styles from "cart.module.css"; //cart module css
+import styles from "./cart.module.css"; 
 
 const Cart = () => {
   const [{ basket }, dispatch] = useContext(DataContext);
@@ -90,7 +90,7 @@ const Cart = () => {
             <label htmlFor="gift">This order contains a gift</label>
           </div>
 
-          {/* ✅ Checkout Button → Payment */}
+          
           <Link to="/payment" style={{ textDecoration: "none" }}>
             <button className={styles.checkoutButton}>
               Continue to checkout
