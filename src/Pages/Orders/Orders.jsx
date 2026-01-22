@@ -3,7 +3,7 @@ import { DataContext } from "../../COMPONENT/DataProvider/DataProvider";
 import { useNavigate } from "react-router-dom";
 import { db } from "../../Utility/Firebase"; 
 import Layout from "../../COMPONENT/Layout/Layout";
-import styles from "./Orders.module.css";
+import styles from "./orders.module.css";
 
 // ← New imports for Firebase v9 modular Firestore
 import { collection, query, where, orderBy, getDocs } from "firebase/firestore";
