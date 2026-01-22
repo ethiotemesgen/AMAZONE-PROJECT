@@ -4,8 +4,8 @@ import styles from "./Auth.module.css";
 import { DataContext } from "../../COMPONENT/DataProvider/DataProvider.jsx";
 import ClipLoader from "react-spinners/ClipLoader";
 
-// ← Updated imports for Firebase v9 modular
-import { auth } from "../../Utility/Firebase"; // your updated firebase.js file
+
+import { auth } from "../../Utility/Firebase"; 
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,

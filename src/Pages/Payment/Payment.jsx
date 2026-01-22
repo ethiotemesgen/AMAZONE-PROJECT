@@ -7,9 +7,9 @@ import styles from "./Payment.module.css";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { db } from "../../Utility/Firebase"; // ← your updated file
-import { collection, addDoc } from "firebase/firestore"; // ← new import
-import { Type } from "../../Utility/Action.type"; // adjust path if needed
+import { db } from "../../Utility/Firebase"; 
+import { collection, addDoc } from "firebase/firestore"; 
+import { Type } from "../../Utility/Action.type"; 
 
 const Payment = () => {
   const [{ user, basket }, dispatch] = useContext(DataContext);

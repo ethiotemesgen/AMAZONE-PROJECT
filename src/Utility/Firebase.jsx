@@ -1,9 +1,9 @@
-// firebase.js (or firebaseConfig.js) - Updated to Firebase v9+ modular syntax
+
 
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
-// Optional: import { getAnalytics } from "firebase/analytics";
+/
 
 const firebaseConfig = {
   apiKey: "AIzaSyBxRc6Ur9McihwsloamH0caKYN1Wm_gRhI",
