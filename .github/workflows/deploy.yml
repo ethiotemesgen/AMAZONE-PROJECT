@@ -33,19 +33,12 @@ jobs:
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
 
-      # Clean old artifacts to prevent "multiple github-pages" error
-      - name: Remove old github-pages artifacts
-        uses: dawidd6/action-delete-artifact@v3
-        if: always()  # run even if previous steps failed
-        with:
-          name: github-pages-dist
-          failOnError: false
-
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          name: github-pages-dist          # Explicit unique name
           path: ./dist
+          # Explicit name helps avoid conflicts
+          name: github-pages-dist
 
   deploy:
     needs: build
