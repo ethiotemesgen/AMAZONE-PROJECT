@@ -1,0 +1,5 @@
+var a={},v;function m(){if(v)return a;v=1,Object.defineProperty(a,"__esModule",{value:!0}),a.parseLengthAndUnit=i,a.cssValue=o;var c={cm:!0,mm:!0,in:!0,px:!0,pt:!0,pc:!0,em:!0,ex:!0,ch:!0,rem:!0,vw:!0,vh:!0,vmin:!0,vmax:!0,"%":!0};function i(t){if(typeof t=="number")return{value:t,unit:"px"};var e,n=(t.match(/^[0-9.]*/)||"").toString();n.includes(".")?e=parseFloat(n):e=parseInt(n,10);var r=(t.match(/[^0-9]*$/)||"").toString();return c[r]?{value:e,unit:r}:(console.warn("React Spinners: ".concat(t," is not a valid css value. Defaulting to ").concat(e,"px.")),{value:e,unit:"px"})}function o(t){var e=i(t);return"".concat(e.value).concat(e.unit)}return a}var u={},s;function d(){if(s)return u;s=1,Object.defineProperty(u,"__esModule",{value:!0}),u.createAnimation=void 0;var c=function(i,o,t){var e="react-spinners-".concat(i,"-").concat(t);if(typeof window>"u"||!window.document)return e;var n=document.createElement("style");document.head.appendChild(n);var r=n.sheet,l=`
+    @keyframes `.concat(e,` {
+      `).concat(o,`
+    }
+  `);return r&&r.insertRule(l,0),e};return u.createAnimation=c,u}export{m as a,d as r};
