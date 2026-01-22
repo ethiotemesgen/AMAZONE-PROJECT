@@ -44,8 +44,7 @@ const Payment = () => {
 
       try {
         // ── Updated: Use environment variable for backend URL ────────────────
-        const backendUrl =
-          import.meta.env.VITE_BACKEND_URL //"http://localhost:5000";
+        const backendUrl = "https://amazon-api-ihyb.onrender.com";
 
         const response = await axios.post(
           `${backendUrl}/payments/create?total=${Math.round(totalPrice * 100)}`,
